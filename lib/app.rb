@@ -7,12 +7,13 @@ class Battle < Sinatra::Application
   end
 
   post '/names' do
-    p params
-    @name = params[:player1]
-    @name = params[:player2]
+    @player1 = params[:player1]
+    @player2 = params[:player2]
     erb :play
   end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
+
+params = {player1: 'makk', player2: 'gra'}

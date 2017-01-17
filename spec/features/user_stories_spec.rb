@@ -11,7 +11,7 @@ feature 'sign up to play' do
     fill_in :player1, with: 'Oscar'
     fill_in :player2, with: 'Will'
     click_button 'Submit'
-    expect(page).to have_content 'Hello Battle!'
+    expect(page).to have_content 'Oscar vs Will'
   end
 end
 
