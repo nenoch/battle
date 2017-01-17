@@ -8,8 +8,8 @@ feature 'sign up to play' do
   scenario 'allows players to start a fight by entering their Names and seeing them' do
     # Capybara.default_driver = :selenium
     visit ('/')
-    fill_in :player1, with: 'Oscar'
-    fill_in :player2, with: 'Will'
+    fill_in :player1name, with: 'Oscar'
+    fill_in :player2name, with: 'Will'
     click_button 'Submit'
     expect(page).to have_content 'Oscar vs Will'
   end
