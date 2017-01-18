@@ -28,6 +28,9 @@ class Battle < Sinatra::Application
     @hp1 = 100
     @hp2 = 100
     @attack = params[:attack]
+    if @attack 
+      @hp1 -= 10
+    end
     erb :play
   end
 

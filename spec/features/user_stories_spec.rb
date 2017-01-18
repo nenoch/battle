@@ -37,7 +37,15 @@ end
 # As Player 1,
 # So I can start to win a game of Battle,
 # I want my attack to reduce Player 2's HP by 10
-#
+feature 'reduce Player 2\'s HP by 10' do
+
+  scenario 'So Player 1 can win I want to reduce Player 2\'s HP by 10' do
+    sign_in_and_play
+    click_button('Attack!')
+    expect(page).to have_content 90
+  end
+
+end
 # As two Players,
 # So we can continue our game of Battle,
 # We want to switch turns
