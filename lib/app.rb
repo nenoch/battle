@@ -25,12 +25,12 @@ class Battle < Sinatra::Application
   get '/play' do
     @p1name = $p1.name
     @p2name = $p2.name
-    @hp1 = 100
-    @hp2 = 100
     @attack = params[:attack]
-    if @attack 
-      @hp1 -= 10
+    if @attack
+      $p1.attack($p2)
     end
+    @hp1 = $p1.points
+    @hp2 = $p2.points
     erb :play
   end
 
