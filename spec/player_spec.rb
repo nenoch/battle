@@ -18,10 +18,10 @@ describe Player do
   end
 
   describe '#attack' do
-    it 'attack the other player' do
+    it 'attacks the other player' do
       p1.attack(p2)
-      expect(p1.points).to eq 90
+      expect(p2.points).to eq 90
     end
   end
-  
+
 end

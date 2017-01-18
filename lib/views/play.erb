@@ -1,14 +1,36 @@
-
-
-<br /><%=@p1name %> vs <%=@p2name %><br />
-HP : <%=@hp1%>    HP : <%=@hp2%>
+<html>
+<head>
+<title>Battle</title>
+<style type='text/css'>
+h1 {
+  font-style: italic;
+}
+#main {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  font-family: fantasy;
+  width: 400px;
+  height: auto;
+  border: 10px solid black;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+<div id='main'>
+<h1>Battle</h1>
+<p><%=@p1name %> vs <%=@p2name %></p>
+<p>HP : <%=@hp1%>    HP : <%=@hp2%></p>
 <br />
 <form action='/play'>
   <input type='submit' value='Attack!'/>
   <input type='hidden' name='attack' value='p1' />
 </form>
 <% if @attack == 'p1' %>
-  <%=@p1name %> is attacking!...
+  <p><%=@p1name %> is attacking!...</p>
 <% elsif @attack == 'p2'%>
-  <%=@p2name %> is attacking!...
+  <p><%=@p2name %> is attacking!...</p>
 <% end %>
+</div>
+</body></html>
