@@ -1,1 +1,13 @@
-<%=@player1%> vs <%=@player2%>
+<%=@player1%> vs <%=@player2%><br />
+HP : <%=@hp1%>    HP : <%=@hp2%>
+<form action='/play'>
+  <input type='submit' value='Attack!'/>
+  <input type='hidden' name='attack' value='p1' />
+</form>
+<% if @attack == 'p1' %>
+<%=@player1%> is attacking!...
+<% elsif @attack == 'p2'%>
+<%=@player1%> is attacking!...
+<!-- <% else %> -->
+
+<% end %>

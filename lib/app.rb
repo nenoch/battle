@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class Battle < Sinatra::Application
   # enable :sessions
-  use Rack::Session::Pool, :expire_after => 2592000
+  use Rack::Session::Pool, :expire_after => 604800
 
   get '/' do
     erb :index
@@ -22,7 +22,10 @@ class Battle < Sinatra::Application
 
   get '/play' do
     @player1 = session['player1name']
+    @hp1 = 100
     @player2 = session['player2name']
+    @hp2 = 100
+    @attack = params[:attack]
     erb :play
   end
 
