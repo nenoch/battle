@@ -31,7 +31,7 @@ feature 'attack Player 2' do
   scenario 'Player 1 wants to attack Player 2 and get a confirmation' do
     sign_in_and_play
     click_button('Attack!')
-    expect(page).to have_content 'You are attacking!...'
+    expect(page).to have_content 'Oscar is attacking!...'
   end
 end
 # As Player 1,
