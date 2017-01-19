@@ -17,11 +17,4 @@ describe Player do
     end
   end
 
-  describe '#attack' do
-    it 'attacks the other player' do
-      p1.attack(p2)
-      expect(p2.points).to eq 90
-    end
-  end
-
 end

@@ -1,9 +1,15 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
+
 
 class Battle < Sinatra::Application
-  # enable :sessions
-  use Rack::Session::Pool, :expire_after => 604800
+  #set for shotgun to work but it works only on the '/'
+  set :session_secret, 'super secret'
+
+  # We are not using sessions at the moment.
+  # enable :sessions ---> creates a cookie without expiring date
+  # use Rack::Session::Pool, :expire_after => 604800 ---> set the cookie to expire after a week
 
   get '/' do
     erb :index
@@ -30,7 +36,7 @@ class Battle < Sinatra::Application
   end
 
   get '/attack' do
-    $p1.attack($p2)
+    Game.new.attack($p2)
     @p1name = $p1.name
     @p2name = $p2.name
     @hp1 = $p1.points
