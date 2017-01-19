@@ -18,20 +18,24 @@ class Battle < Sinatra::Application
   post '/names' do
     $p1 = Player.new(params[:player1name])
     $p2 = Player.new(params[:player2name])
-
     redirect '/play'
   end
 
   get '/play' do
     @p1name = $p1.name
     @p2name = $p2.name
-    @attack = params[:attack]
-    if @attack
-      $p1.attack($p2)
-    end
     @hp1 = $p1.points
     @hp2 = $p2.points
     erb :play
+  end
+
+  get '/attack' do
+    $p1.attack($p2)
+    @p1name = $p1.name
+    @p2name = $p2.name
+    @hp1 = $p1.points
+    @hp2 = $p2.points
+    erb :attack
   end
 
   # start the server if ruby file executed directly

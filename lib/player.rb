@@ -3,7 +3,7 @@ class Player
 
   ATTACK_VALUE = 10
 
-  def initialize(name, points=100)
+  def initialize(name, points = 100)
     @name = name
     @points = points
   end
